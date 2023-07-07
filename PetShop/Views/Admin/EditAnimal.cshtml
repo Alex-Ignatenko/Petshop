@@ -1,0 +1,93 @@
+﻿@model PetShop.Models.Animal
+@{
+    ViewData["Title"] = "Edit Selected Animal";
+}
+
+<br />
+<div class="my-to-center-container">
+    <div class="my-page-header-4">
+        <img class="my-page-header-sub-element" src="~/img/pawLight.png" width="50" height="50" />
+        <h1 class="my-page-header-sub-element">Edit Selected animal</h1>
+        <img class="my-page-header-sub-element" src="~/img/pawLight.png" width="50" height="50" />
+    </div>
+</div>
+
+<br />
+
+<div class="my-to-center-container">
+    <div class="my-detail-box-3">
+        <div class="my-to-center-container">
+            <form enctype="multipart/form-data" asp-action="EditAnimal" asp-controller="Admin" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <br />
+                <input type="hidden" asp-for="PictureName" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label" style="color:white;"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="form-group">
+                        <label asp-for="Picture" class="control-label" style="color:white;"></label>
+                        <div class="custom-file">
+                            <input asp-for="Picture" class="custom-file-input" id="picFile" data-val="false" onchange="document.getElementById('PreviewImg').src = window.URL.createObjectURL(this.files[0])" />
+                            <label class="custom-file-label" for="picFile">Choose Picture</label>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div class="col-md-4">
+                            <div class="form-group col-12">
+                                <img id="PreviewImg" class="my-border" src="~/img/@Model.PictureName" width="150" height="150" />
+                                <span asp-validation-for="Picture" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="Category" class="control-label" style="color:white;"></label>
+                    <select asp-for="CategoryId" asp-items="ViewBag.categoryList" class="form-control"><option value="0">Select Category</option></select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="Age" class="control-label" style="color:white;"></label>
+                    <input asp-for="Age" class="form-control" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label" style="color:white;"></label>
+                    <textarea asp-for="Description" class="form-control" rows="3" cols="5"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <br />
+                <div class="form-group my-to-center-container">
+                    <input type="submit" value="Edit Animal" class="btn btn-lg btn-success" />
+                </div>
+                <br />
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<br />
+
+<div class="my-to-center-container">
+    <a asp-action="Index" asp-controller="Admin" class="btn btn-lg btn-primary">Back to Admin Page</a>
+</div>
+
+<script type="text/javascript">
+    $(".custom-file-input").on("change", function () {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+</script>
+
+}
+
+

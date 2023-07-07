@@ -1,0 +1,200 @@
+
+/*General*/
+body {
+    margin-bottom: 60px;
+    font-family: Bahnschrift;
+    background-image: url('/img/bg1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1, h2, h3 {
+    padding: 15px;
+    text-align: center;
+}
+
+.my-to-center-container {
+    display: flex;
+    justify-content: center;
+}
+
+#my-page-header-1 {
+    background-color: #28578f;
+    border: 3px solid #fcc900;
+    width: 1000px;
+    padding: 10px;
+    text-align: center;
+}
+
+#my-page-header-2 {
+    background-color: #28578f;
+    border: 3px solid #fcc900;
+    width: 1150px;
+    padding: 10px;
+    text-align: center;
+}
+
+#my-page-header-3 {
+    background-color: #28578f;
+    border: 3px solid #fcc900;
+    width: 1450px;
+    padding: 10px;
+    text-align: center;
+}
+
+.my-page-header-4 {
+    background-color: #28578f;
+    border: 3px solid #fcc900;
+    width: 500px;
+    padding: 10px;
+    text-align: center;
+}
+
+.my-sub-page-header {
+    background-color: #28578f;
+    border: 3px solid #fcc900;
+    width: 682px;
+    padding: 1px;
+    text-align: center;
+}
+
+.my-page-header-sub-element {
+    display: inline-block;
+    font-weight: bold;
+    font-size: x-large;
+    color: white;
+}
+
+.my-dropdown {
+    background-color: #28578f;
+    border: 3px solid #fcc900;
+    height: 50px;
+    width: 200px;
+    color: white;
+    text-align: center;
+}
+
+.my-border {
+    border: 3px solid #fcc900;
+}
+
+
+/*Layout Page*/
+.my-navbar {
+    border: 3px solid #fcc900;
+    background-image: url('/img/bg2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.my-nav-btn {
+    background-color: #28578f;
+    border: 3px solid #fcc900;
+    font-weight: bolder;
+    font-size: large;
+    width: 100px;
+    text-align: center;
+    margin: 10px;
+}
+
+
+/*Table */
+.container {
+    display: table;
+    border: 1px solid #fcc900;
+    padding: unset
+}
+
+.my-heading-row {
+    font-weight: bold;
+    display: table-row;
+    background-color: #28578f;
+    text-align: center;
+    line-height: 60px;
+}
+
+.my-heading-col {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    display: table-cell;
+    min-width: 150px;
+    border: 2px solid #fcc900;
+}
+
+.my-table-row {
+    display: table-row;
+    text-align: center;
+}
+
+.my-table-col {
+    font-size: 16px;
+    font-weight: bold;
+    display: table-cell;
+    min-width: 150px;
+    border: 1.35px solid #fcc900;
+    background-image: url('/img/bg2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Home Page*/
+.top-two-container {
+    border: 3px solid #fcc900;
+    background-color: #28578f;
+    padding: 20px;
+}
+
+.top-two-li-list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    background-image: url('/img/bg2.png');
+    border: 2px solid #fcc900;
+}
+
+/*Catalog Page*/
+
+/*Details Page*/
+
+.my-detail-box-1 {
+    width: fit-content;
+    height: fit-content;
+    background-color: #28578f;
+    border: 3px solid #fcc900;
+}
+
+.my-detail-box-2 {
+    width: 1000px;
+    height: fit-content;
+    background-color: #28578f;
+    border: 3px solid #fcc900;
+}
+
+.my-detail-box-3 {
+    width: 500px;
+    height: fit-content;
+    background-color: #28578f;
+    border: 3px solid #fcc900;
+}
+
+.my-column-img {
+    float: left;
+    padding-left: 15px;
+    padding-right: 5px;
+}
+
+.my-column-details {
+    float: left;
+    padding-left: 15px;
+    padding-right: 5px;
+    padding-top:35px;
+}
+
+.my-column-comments {
+    float: left;
+    padding-left: 35px;
+    padding-top: 15px;
+}
+
+
+

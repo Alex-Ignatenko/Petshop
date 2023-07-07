@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PetShop.Models.Animal>
+@{
+    ViewBag.Title = "Pet Shop - Home";
+}
+
+<br />
+<div class="my-to-center-container">
+    <div id="my-page-header-1">
+        <img class="my-page-header-sub-element" src="~/img/pawLight.png" width="50" height="50" />
+        <h1 class="my-page-header-sub-element">Welcome to the pet shop!</h1>
+        <img class="my-page-header-sub-element" src="~/img/pawLight.png" width="50" height="50" />
+    </div>
+</div>
+
+<br />
+<div class="my-to-center-container">
+    <img src="~/img/logo.png" width="200" height="200" />
+</div>
+<br />
+<div class="my-to-center-container">
+    <div class="my-sub-page-header">
+        <img class="my-page-header-sub-element" src="~/img/pawLight.png" width="50" height="50" />
+        <h2 class="my-page-header-sub-element">Top two rated pets today</h2>
+        <img class="my-page-header-sub-element" src="~/img/pawLight.png" width="50" height="50" />
+    </div>
+</div>
+
+<div class="my-to-center-container">
+    <div class="row top-two-container">
+        @foreach (var animal in Model)
+        {
+        <div class="col-sm-6">
+            <div class="card my-border" style="width: 18rem;">
+              <a asp-controller="Catalog" asp-action="Details" asp-route-id="@animal.Id"><img class="card-img-top my-border" src="~/img/@animal.PictureName" alt="@animal.Name" /></a>
+              <ul class="list-group list-group-flush">
+                <li class="top-two-li-list-group-item">Name: @animal.Name</li>
+                <li class="top-two-li-list-group-item">Category: @animal.Category!.Name</li>
+                <li class="top-two-li-list-group-item">Age: @animal.Age</li>
+                <li class="top-two-li-list-group-item">Number of comments: @animal.Comments!.Count()</li>
+                <li class="top-two-li-list-group-item" style="height:250px">Description: @animal.Description</li>
+              </ul>
+            </div>
+        </div>
+        }
+    </div>
+</div>

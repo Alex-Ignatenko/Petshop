@@ -1,0 +1,27 @@
+﻿@model PetShop.Models.ErrorModel
+@{
+    ViewData["Title"] = "Error Page";
+}
+    <br />
+    <div class="my-to-center-container">
+    <div id="my-page-header-1">
+            <img class="my-page-header-sub-element" src="~/img/paw.png" width="50" height="50" />
+            <h1 class="my-page-header-sub-element" style="color: red">Oh No! Error!</h1>
+            <img class="my-page-header-sub-element" src="~/img/paw.png" width="50" height="50" />
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="my-to-center-container">
+        <div>
+            <p>Error Details: @Model.ErrorMsg</p>
+            <p>Error Date: @Model.ErrorDate</p>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="my-to-center-container">
+        <a asp-action="Index" asp-controller="Home" class="btn btn-secondary">Go Back!</a>
+    </div>

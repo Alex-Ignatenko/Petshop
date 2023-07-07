@@ -1,0 +1,77 @@
+﻿@model PetShop.Models.Animal
+@{
+    ViewData["Title"] = "Pet Shop - Delete";
+}
+
+<br />
+<div class="my-to-center-container">
+    <div id="my-page-header-1">
+        <img class="my-page-header-sub-element" src="~/img/pawLight.png" width="50" height="50" />
+        <h1 class="my-page-header-sub-element">Delete This Animal?</h1>
+        <img class="my-page-header-sub-element" src="~/img/pawLight.png" width="50" height="50" />
+    </div>
+</div>
+
+<br />
+<br />
+
+<div class="my-to-center-container">
+    <div class="my-detail-box-2">
+        <div class="row">
+            <div class="my-column-img ">
+                <img src="~/img/@Model.PictureName" alt="@Model.Name" width="200px" height="200px" />
+            </div>
+            <div class="my-column-details">
+                <div class="row" style="color:white; font-size:20px">
+                    <div class="col-sm-3">
+                        Name:
+                    </div>
+                    <div class="col-sm-9">
+                        @Model.Name
+                    </div>
+                    <div class="col-sm-3">
+                        Category:
+                    </div>
+                    <div class="col-sm-9">
+                        @Model.Category!.Name
+                    </div>
+                    <div class="col-sm-3">
+                        Age:
+                    </div>
+                    <div class="col-sm-9">
+                        @Model.Age
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="my-to-center-container">
+    <div class="my-detail-box-2">
+        <div class="row" style="color:white; font-size:20px;padding-left:10px; padding-top:10px">
+            <u class="col-sm-2">
+                Description:
+            </u>
+        </div>
+        <div class="col-sm-10;" style="color:white; font-size:18px;padding-left:20px; padding-right:20px; padding-bottom:10px">
+            @Model.Description
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+<div class="my-to-center-container">
+    <form asp-action="DeleteAnimal" asp-controller="Admin">
+        <button type="submit" class="btn btn-lg btn-danger">Delete</button>
+    </form>
+</div>
+
+<br />
+
+<div class="my-to-center-container">
+    <a asp-action="Index" asp-controller="Admin" class="btn btn-lg btn-primary">Back to Admin</a>
+</div>
+

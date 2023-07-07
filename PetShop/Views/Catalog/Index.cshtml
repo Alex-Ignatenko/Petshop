@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PetShop.Models.Animal>
+@{
+    ViewBag.Title = "Pet Shop - Catalog";
+}
+
+<br />
+<div class="my-to-center-container">
+    <div id="my-page-header-2">
+        <img class="my-page-header-sub-elementt" src="~/img/pawLight.png" width="50" height="50" />
+        <h1 class="my-page-header-sub-element">Pet Catalog</h1>
+        <img class="my-page-header-sub-element" src="~/img/pawLight.png" width="50" height="50" />
+    </div>
+</div>
+
+<br />
+
+<div class="my-to-center-container">
+    <form asp-action="Index" asp-controller="Catalog" method="post">
+        @Html.DropDownList("categoryName", ViewBag.categoryList as SelectList, null, new { onchange = "submit();",@class="my-dropdown" })
+    </form>
+</div>
+
+<br />
+
+<div class="my-to-center-container">
+<div class="container">
+    <div class="my-heading-row">
+        <div class="my-heading-col" style="width: 150px">Picture</div>
+        <div class="my-heading-col" >Name</div>
+        <div class="my-heading-col">Description</div>
+        <div class="my-heading-col">Find out more and comment</div>
+    </div>
+    @foreach (var animal in Model)
+    {
+        <div class="my-table-row">
+            <div class="my-table-col" style="padding: 15px"><img src="~/img/@animal.PictureName" class="my-border" alt="@animal.Name" width="100px" height="100px" /></div>
+            <div class="my-table-col">@animal.Name</div>
+            <div class="my-table-col" style="vertical-align:top; text-align:left; padding:10px; width:550px">@animal.Description</div>
+            <div class="my-table-col"><a asp-controller="Catalog" asp-action="Details" asp-route-id="@animal.Id" class="btn btn-lg btn-primary"><i class="bi bi-eye" style="font-size: 1.2rem; color: white;"></i> View Details</a></div>
+        </div>
+    }
+</div>
+</div>
+
+
+

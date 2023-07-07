@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PetShop.Models.Animal>
+@{
+    ViewBag.Title = "Pet Shop - Admin";
+}
+    <br />
+    <div class="my-to-center-container">
+        <div id="my-page-header-3">
+            <img class="my-page-header-sub-element" src="~/img/pawLight.png" width="50" height="50" />
+            <h1 class="my-page-header-sub-element">Administrator Area</h1>
+            <img class="my-page-header-sub-element" src="~/img/pawLight.png" width="50" height="50" />
+        </div>
+    </div>
+    <br />
+
+    <div class="my-to-center-container">
+        <a asp-controller="Admin" asp-action="AddAnimal" class="btn btn-lg btn-success"><i class="bi bi-plus-circle" style="color: white;"></i> Add Animal</a>
+    </div>
+    <br />
+
+    <div class="my-to-center-container">
+        <form asp-action="Index" asp-controller="Admin" method="post">
+        @Html.DropDownList("categoryName", ViewBag.categoryList as SelectList, null, new { onchange = "submit();",@class="my-dropdown" })
+    </form>
+    </div>
+    <br />
+
+    <div class="container">
+        <div class="my-heading-row">
+            <div class="my-heading-col">Picture</div>
+            <div class="my-heading-col">Name</div>
+            <div class="my-heading-col">Category</div>
+            <div class="my-heading-col">Age</div>
+            <div class="my-heading-col">Description</div>
+            <div class="my-heading-col">Edit</div>
+            <div class="my-heading-col">Delete</div>
+        </div>
+        @foreach (var animal in Model)
+        {
+            <div class="my-table-row">
+                <div class="my-table-col" style="padding: 15px"><img src="~/img/@animal.PictureName" class="my-border" alt="@animal.Name" width="100px" height="100px" /></div>
+                <div class="my-table-col">@animal.Name</div>
+                <div class="my-table-col">@animal.Category!.Name</div>
+                <div class="my-table-col">@animal.Age</div>
+                <div class="my-table-col" style="vertical-align:top; text-align:left; padding:10px; min-width:550px">@animal.Description</div>
+                <div class="my-table-col" style="padding: 10px;">
+                    <a asp-controller="Admin" asp-action="EditAnimal" asp-route-id="@animal.Id" class="btn btn-lg btn-info"><i class="bi bi-pencil-square" style="color: white;"></i> Edit</a>
+                </div>                
+                <div class="my-table-col" style="padding: 10px;">
+                    <a asp-controller="Admin" asp-action="DeleteAnimal" asp-route-id="@animal.Id" class="btn btn-lg btn-danger"><i class="bi bi-trash3" style="color: white;"></i> Delete</a>
+                </div>
+            </div>
+        }
+    </div>
+
+                   
